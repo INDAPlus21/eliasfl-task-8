@@ -26,10 +26,8 @@
         # test multiply coroutine
         li $a0, 2345 # first number to be multiplied
         li $a1, 5432 # second number to be multiplied
-        PUSH($ra)                           # save return address
 	    jal multiply                        # execute multiply with arguments $a0 and $a1
 	    nop
-        POP($ra)                            # get prev return address
         # print output
         move $a0, $v0
         li  $v0, 1                          # set system call code to "print integer"
@@ -42,10 +40,8 @@
 
         # test faculty coroutine
 		li $a0, 12 # number to facultate
-		PUSH($ra)                           # save return address
 		jal faculty                         # facultate the number in $a0
 		nop
-		POP($ra)                            # get prev return address
         # print output
         move $a0, $v0
         li  $v0, 1                          # set system call code to "print integer"
